@@ -9,16 +9,17 @@ on:
       - "*"
 
 jobs:
-  build:
+  lint-md:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out repository
-      uses: actions/bkdocs_test
-    - name: Use local my-action
-      uses: ./.github/actions/bkdocs_test
-    - name: Setup Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - run: npm i -g lint-md-cli
-    - run: lint-md *
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+          path: docs
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - run: npm i -g lint-md-cli
+      - run: lint-md *
