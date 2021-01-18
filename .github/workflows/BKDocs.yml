@@ -25,5 +25,6 @@ jobs:
         run: |
           npm i -g lint-md-cli
           # lint-md docs/*
-          npx lint-md || echo 1
-          echo "git diff --diff-filter=d --name-only ${env.MR_TARGET_BRANCH}... | grep '.md\$' | xargs npx lint-md"
+          echo "$GITHUB_REF"
+          echo "$GITHUB_BASE_REF"
+          echo "$GITHUB_HEAD_REF"
