@@ -25,4 +25,4 @@ jobs:
         run: |
           npm i -g lint-md-cli
           # lint-md docs/*
-          git diff --diff-filter=d --name-only ${GITHUB_BASE_REF} | grep '.md\$' | xargs npx lint-md
+          git diff --diff-filter=d --name-only ${{ github.base_ref }} | grep '.md\$' | xargs npx lint-md
