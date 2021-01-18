@@ -21,5 +21,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '12'
-      - run: npm i -g lint-md-cli
-      - run: lint-md *
+      - name: install plugin and check
+        run: |
+          npm i -g lint-md-cli
+          pwd
+          lint-md *
+          
