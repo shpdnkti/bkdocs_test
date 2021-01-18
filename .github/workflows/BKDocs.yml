@@ -26,5 +26,3 @@ jobs:
           npm i -g lint-md-cli
           # lint-md docs/*
           echo "$GITHUB_REF"
-          echo "$GITHUB_BASE_REF"
-          echo "$GITHUB_HEAD_REF"
