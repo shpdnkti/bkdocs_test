@@ -7,6 +7,9 @@ on:
   push:
     branches: 
       - "*"
+  pull_request:
+    branches: 
+      - "*"
 
 jobs:
   lint-md:
@@ -21,9 +24,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '12'
-      - name: install plugin and check
+      - name: Install Plugin and Check
         run: |
           npm i -g lint-md-cli
-          pwd
-          lint-md *
-          
+          lint-md docs/*
