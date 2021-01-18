@@ -30,6 +30,5 @@ jobs:
           echo 3${{ github.base_ref	}}
           echo 4$GITHUB_BASE_REF
           echo 5${GITHUB_BASE_REF}
-          echo 6${{ GITHUB_BASE_REF }}
           git diff --diff-filter=d --name-only "${{ github.base_ref	 }}..." | grep '.md\$' | xargs npx lint-md
         shell: bash
