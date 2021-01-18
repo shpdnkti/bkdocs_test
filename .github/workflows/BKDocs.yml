@@ -25,5 +25,5 @@ jobs:
           set -ex
           npm i -g lint-md-cli
           # lint-md docs/*
-          git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep '.md\$' | xargs npx lint-md
+          git diff --diff-filter=d --name-only "$GITHUB_BASE_REF..." | grep '.md\$' | xargs npx lint-md
         shell: bash
