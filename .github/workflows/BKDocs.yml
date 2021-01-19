@@ -4,6 +4,11 @@ on:
   pull_request:
     types: [opened, edited, reopened]
     branches: "*"
+    paths: 
+      - "**.md"
+
+env:
+  IS_TRACE: false
 
 jobs:
   lint-md:
@@ -18,7 +23,8 @@ jobs:
         id: getfile
         shell: bash
         run: |
-          set -eux
+          [[ $IS_TRACE == 'true' ]] && set -x
+          set -eu
           if [ $GITHUB_BASE_REF ]; then
             git fetch origin $GITHUB_BASE_REF --depth=1
             export DIFF=$( while IFS= read -r -d '' x; do printf '%q\n' "$x"; done < <( git diff --name-only -z origin/$GITHUB_BASE_REF $GITHUB_SHA ) )
@@ -28,10 +34,6 @@ jobs:
             exit 1
           fi
           echo "${DIFF[@]}" | sort -u
-          for f in $( echo "${DIFF[@]}" | sort -u ); do
-            cat ${GITHUB_WORKSPACE}/${f}
-          done
-          
           echo "::set-output name=diff::$( echo "${DIFF[@]}" | sort -u )"
 
       - name: Setup Node
@@ -42,5 +44,6 @@ jobs:
       - name: Lint Markdown
         shell: bash
         run: |
+          [[ $IS_TRACE == 'true' ]] && set -x
           npm i -g lint-md-cli
           lint-md ${{ steps.getfile.outputs.diff }}
