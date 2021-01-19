@@ -20,6 +20,7 @@ jobs:
       - name: Install Plugin and Check
         shell: bash
         run: |
+          set -ex
           if [ $GITHUB_BASE_REF ]; then
             git fetch origin $GITHUB_BASE_REF --depth=1
             #export DIFF=$( git diff --name-only origin/$GITHUB_BASE_REF $GITHUB_SHA )
@@ -29,5 +30,8 @@ jobs:
             echo "no BASE REF"
             exit 1
           fi
-          cat "$GITHUB_WORKSPACE/$DIFF"
+          for f in $( echo "${DIFF[@]}" | sort -u ); do
+            cat ${GITHUB_WORKSPACE}/${f}
+          done
+          
           echo "::set-output name=diff::$( echo "$DIFF" | sed ':a;N;$!ba;s/\n/%0A/g' )"
