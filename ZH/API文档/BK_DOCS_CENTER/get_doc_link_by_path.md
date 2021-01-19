@@ -1,4 +1,4 @@
-### 请求地址
+### 请求地址asdasd阿斯达斯
 
 /api/c/compapi/v2/bk_docs_center/get_doc_link_by_path/
 
