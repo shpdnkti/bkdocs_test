@@ -23,6 +23,7 @@ jobs:
         id: getfile
         shell: bash
         run: |
+          echo "::group::git diff --name-only -z origin/$GITHUB_BASE_REF $GITHUB_SHA"
           [[ $IS_TRACE == 'true' ]] && set -x
           set -eu
           if [ $GITHUB_BASE_REF ]; then
@@ -35,6 +36,7 @@ jobs:
           fi
           echo "${DIFF[@]}" | sort -u
           echo "::set-output name=diff::$( echo "${DIFF[@]}" | sort -u )"
+          echo "::endgroup::"
 
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -44,6 +46,8 @@ jobs:
       - name: Lint Markdown
         shell: bash
         run: |
+          echo "::group::Lint Markdown by lint-md(https://github.com/lint-md/lint-md)"
           [[ $IS_TRACE == 'true' ]] && set -x
           npm i -g lint-md-cli
           lint-md ${{ steps.getfile.outputs.diff }}
+          echo "::endgroup::"
