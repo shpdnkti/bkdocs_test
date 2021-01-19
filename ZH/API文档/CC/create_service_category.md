@@ -1,5 +1,5 @@
 
-### 请求地址
+### 请求ategory地址
 
 /api/c/compapi/v2/cc/create_service_category/
 
