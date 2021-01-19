@@ -1,19 +1,19 @@
 
-### 请求地址
+### 请求地usines址
 
 /api/c/compapi/v2/cc/create_business/
 
 
 
-### 请求方法
+### 请求usines方法
 
 POST
 
 
-### 功能描述
+### 功usines能描述
 
-新建业务
-
+新建usines业务
+usines
 ### 请求参数
 
 
