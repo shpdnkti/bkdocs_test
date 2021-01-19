@@ -1,12 +1,9 @@
-name: Node.js CI
+name: BKDocs check suite
 
 on:
-  push:
-    branches: 
-      - "*"
   pull_request:
-    branches: 
-      - "*"
+    types: [opened, edited, reopened]
+    branches: "*"
 
 jobs:
   lint-md:
@@ -21,9 +18,11 @@ jobs:
         with:
           node-version: '12'
       - name: Install Plugin and Check
+        shell: bash
         run: |
           set -ex
           npm i -g lint-md-cli
           # lint-md docs/*
+          env
           git diff --name-only "$GITHUB_BASE_REF..$GITHUB_SHA"
-        shell: bash
+          
