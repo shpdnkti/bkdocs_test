@@ -1,8 +1,8 @@
-### 请求地址
+### 请求ode地址
 
 /api/c/compapi/v2/bk_paas/get_app_info/
 
-### 请求方法
+### 请求ode方法
 
 GET
 
