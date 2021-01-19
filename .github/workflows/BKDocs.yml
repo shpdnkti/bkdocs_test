@@ -22,7 +22,8 @@ jobs:
         run: |
           if [ $GITHUB_BASE_REF ]; then
             git fetch origin $GITHUB_BASE_REF --depth=1
-            export DIFF=$( git diff --name-only origin/$GITHUB_BASE_REF $GITHUB_SHA )
+            #export DIFF=$( git diff --name-only origin/$GITHUB_BASE_REF $GITHUB_SHA )
+            export DIFF=$( while IFS= read -r -d '' x; do printf '%q\n' "$x"; done < <( git diff --name-only origin/$GITHUB_BASE_REF $GITHUB_SHA ) )
             echo "Diff between origin/$GITHUB_BASE_REF and $GITHUB_SHA"
           else
             echo "no BASE REF"
