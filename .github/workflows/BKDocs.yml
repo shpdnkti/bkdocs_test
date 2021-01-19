@@ -23,5 +23,5 @@ jobs:
           set -ex
           npm i -g lint-md-cli
           # lint-md docs/*
-          echo git diff --name-only "${GITHUB_BASE_REF}" | bash 
+          git diff --name-only "${GITHUB_BASE_REF}..." --
           
