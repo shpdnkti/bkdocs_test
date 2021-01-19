@@ -25,5 +25,5 @@ jobs:
           set -ex
           npm i -g lint-md-cli
           # lint-md docs/*
-          git diff --diff-filter=d --name-only "${GITHUB_BASE_REF}...${GITHUB_HEAD_REF}"
+          git diff --name-only "${GITHUB_BASE_REF}..."
         shell: bash
