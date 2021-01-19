@@ -28,5 +28,5 @@ jobs:
             echo "no BASE REF"
             exit 1
           fi
-          cat "$DIFF"
+          cat "$GITHUB_WORKSPACE/$DIFF"
           echo "::set-output name=diff::$( echo "$DIFF" | sed ':a;N;$!ba;s/\n/%0A/g' )"
