@@ -28,7 +28,7 @@ jobs:
             https://api.github.com/repos/shpdnkti/bkdocs_test/releases/tags/${GITHUB_REF##*/} \
             | python -c 'import json,sys; print json.load(sys.stdin)["upload_url"]' \
             | sed 's/{?name,label}//' )
-          echo "::set-output name=upload_url::$( echo "${UPLOAD_URL} )"
+          echo "::set-output name=upload_url::$( echo ${UPLOAD_URL} )"
       
       - name: Upload Release
         uses: actions/upload-release-asset@v1
