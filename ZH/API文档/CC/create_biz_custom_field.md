@@ -1,11 +1,11 @@
 
-### 请求地址
+### 请求ompaompa地址
 
 /api/c/compapi/v2/cc/create_biz_custom_field/
 
 
 
-### 请求方法
+### 请ompa求方法
 
 POST
 
