@@ -36,7 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
           upload_url: ${{ steps.get_upload_url.outputs.upload_url }}
-          asset_path: ./docs-${GITHUB_REF##*/}.tar.gz
+          asset_path: $GITHUB_WORKSPACE/docs-${GITHUB_REF##*/}.tar.gz
           asset_name: docs-${GITHUB_REF##*/}.tar.gz
           asset_content_type: application/x-gzip
           
