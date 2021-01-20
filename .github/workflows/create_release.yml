@@ -29,8 +29,7 @@ jobs:
           set -eux
           export UPLOAD_URL=$( curl -s -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/repos/shpdnkti/bkdocs_test/releases/tags/${GITHUB_REF##*/} \
-            | python -c 'import json,sys; print json.load(sys.stdin)["upload_url"]' \
-            | sed 's/{?name,label}//' )
+            | python -c 'import json,sys; print json.load(sys.stdin)["upload_url"]' )
           echo "::set-output name=upload_url::$( echo ${UPLOAD_URL} )"
       
       - name: Upload Release
