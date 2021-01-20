@@ -1,8 +1,9 @@
 name: BKDocs create release
 
 on:
-  release:
-    type: [published]
+  push:
+    tags:
+    - 'v*'
     
 jobs:
   Release_a_Release:
