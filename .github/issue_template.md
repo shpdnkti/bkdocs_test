@@ -1,32 +1,12 @@
-Issue tracker is **ONLY** used for reporting bugs. New features should be discussed on our slack channel. Please use [stackoverflow](https://stackoverflow.com) for supporting issues.
+Issue 仅用于文档 bug 跟进，其他问题欢迎到[蓝鲸 S-mart 问题社区](https://bk.tencent.com/s-mart/community)提问。
 
-<!--- Provide a general summary of the issue in the Title above -->
+<!--- 标题请标注该次 Issue 的问题摘要 -->
 
-## Expected Behavior
-<!--- Tell us what should happen -->
+## 预期是什么
 
-## Current Behavior
-<!--- Tell us what happens instead of the expected behavior -->
 
-## Possible Solution
-<!--- Not obligatory, but suggest a fix/reason for the bug, -->
+## 当前是什么
 
-## Steps to Reproduce
-<!--- Provide a link to a live example, or an unambiguous set of steps to -->
-<!--- reproduce this bug. Include code to reproduce, if relevant -->
-1.
-2.
-3.
-4.
 
-## Context (Environment)
-<!--- How has this issue affected you? What are you trying to accomplish? -->
-<!--- Providing context helps us come up with a solution that is most useful in the real world -->
-
-<!--- Provide a general summary of the issue in the Title above -->
-
-## Detailed Description
-<!--- Provide a detailed description of the change or addition you are proposing -->
-
-## Possible Implementation
-<!--- Not obligatory, but suggest an idea for implementing addition or change -->
+## 解决方案
+<!--- 非必选，可给出建议的修复方法 -->
