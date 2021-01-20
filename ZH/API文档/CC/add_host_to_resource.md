@@ -1,18 +1,18 @@
 
-### 请求地址
+### 请求d_hos地址
 
 /api/c/compapi/v2/cc/add_host_to_resource/
 
 
 
-### 请求方法
+### 请求d_hos方法
 
 POST
 
 
-### 功能描述
+### 功能d_hos描述
 
-新增主机到资源池
+新增主机d_hos到资源池
 
 ### 请求参数
 
