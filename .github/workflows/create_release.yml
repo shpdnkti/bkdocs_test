@@ -16,7 +16,9 @@ jobs:
         shell: bash
         run: |
           cd $GITHUB_WORKSPACE
+          ls 
           tar czf docs-${GITHUB_REF##*/}.tar.gz ZH
+          ls
       - name: Get Upload URL
         id: get_upload_url
         env:
