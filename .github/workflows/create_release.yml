@@ -16,9 +16,8 @@ jobs:
         shell: bash
         run: |
           cd $GITHUB_WORKSPACE
-          ls 
+          echo "release_asset=docs-${GITHUB_REF##*/}.tar.gz" >> $GITHUB_ENV
           tar czf docs-${GITHUB_REF##*/}.tar.gz ZH
-          ls
       - name: Get Upload URL
         id: get_upload_url
         env:
@@ -38,7 +37,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
           upload_url: ${{ steps.get_upload_url.outputs.upload_url }}
-          asset_path: $GITHUB_WORKSPACE/docs-${GITHUB_REF##*/}.tar.gz
-          asset_name: docs-${GITHUB_REF##*/}.tar.gz
+          asset_path: $GITHUB_WORKSPACE/$release_asset
+          asset_name: $release_asset
           asset_content_type: application/x-gzip
           
